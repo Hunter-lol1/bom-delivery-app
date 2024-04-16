@@ -75,12 +75,12 @@ def cadastrar_novo_restaurante():
     '''
     exibir_subtitulo('Cadastro de novos restaurantes')
     nome_do_restaurante = input('Digite o nome do restaurante que deseja cadastrar: ')
-    categoria_restaurante = input(f'Digite a categoria do restaurante{nome_do_restaurante}: ')
+    categoria_restaurante = input(f'Digite a categoria do restaurante {nome_do_restaurante}: ')
     dados_do_restaurante = {'nome':nome_do_restaurante, 'categoria':categoria_restaurante, 'ativo':False}
     restaurantes.append(dados_do_restaurante)
     print(f'O restaurante {nome_do_restaurante} foi cadastrado com sucesso!')
-    input('\n Digite uma tecla para voltar ao menu principal ')
-    main()
+
+    voltar_ao_menu_principal()
 
 def listar_restaurantes():
     '''Essa função é responsável por listar os restaurantes cadastrados
@@ -97,8 +97,7 @@ def listar_restaurantes():
         ativo_restaurante = 'ativado' if  restaurante['ativo'] else 'desativado'
         print(f'- {nome_restaurante.ljust(20)} | {categoria_restaurante.ljust(20)} | {ativo_restaurante}')
 
-    input('\n Digite uma tecla para voltar ao menu principal ')
-    main()
+    voltar_ao_menu_principal()
 
 def alternar_estado_restaurante():
     '''Essa função é responsável por ativar ou desativar um restaurante cadastrado
@@ -120,7 +119,7 @@ def alternar_estado_restaurante():
     if not restaurante_encontrado:
         print('O restaurante não foi encontrado!')
 
-    voltar_ao_menu_principal
+    voltar_ao_menu_principal()
 
 def escolher_opcao():
     '''Solicita e executa a opção escolhida pelo usuário
